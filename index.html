@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vanko Estao</title>
+</head>
+<body>
+    <h1>Bienvenido a mi página Inclusive</h1>
+    <h2>En esta página usted va a encontrar el mejor apodo para su nombre</h2>
+
+    <div>
+        <span>¿Cuál es su sexo?</span>
+        <select id="sexoInput">
+            <option value="M">Superior (Hombre)</option>
+            <option value="F">Inferior (Mujer)</option>
+            <option value="O">Otro (Veneco)</option>
+        </select>
+    </div>
+    <div>
+        <span>Nombre</span>
+        <input type="text" id="nombreInput"/>
+    </div>
+    <button onclick="mostrarApodo()">Mostrar Apodo</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <!-- Imagen oculta -->
+    <img id="miImagen" src="https://blog.fpmaragall.org/hs-fs/hubfs/sindrome-de-down-y-alzheimer.jpg?width=1115&name=sindrome-de-down-y-alzheimer.jpg" alt="Descripción de la imagen" style="display: none;">
+
+    <script>
+        function mostrarApodo() {
+            var sexoSelect = document.getElementById("sexoInput");
+            var nombreInput = document.getElementById("nombreInput");
+            var resultado = document.getElementById("resultado");
+            var miImagen = document.getElementById("miImagen");
+
+            var sexo = sexoSelect.value;
+            var nombre = nombreInput.value;
+
+            var apodo;
+            if (sexo === "M") {
+                apodo = "el waton";
+            } else if (sexo === "F") {
+                apodo = "la watona";
+            } else {
+                apodo = "el veneco";
+            }
+
+            resultado.innerHTML = "Su apodo es " + apodo + ": " + nombre + "";
+
+            // Crear y mostrar el mensaje de agradecimiento
+            var mensajeAgradecimiento = document.createElement("h3");
+            mensajeAgradecimiento.textContent = "¡Muchas gracias!";
+            mensajeAgradecimiento.style.fontSize = "60px";
+            document.body.appendChild(mensajeAgradecimiento);
+
+            // Mostrar la imagen
+            miImagen.style.display = "block";
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
